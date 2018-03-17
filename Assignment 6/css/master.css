@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: auto 30px;
-  background-color: #eeeeee;
+  background-color: #66BB6A;
 }
 
 main, footer {
@@ -12,11 +12,34 @@ main, footer {
 }
 
 main {
-  background-color: #ffffff;
-  border: solid 1px #555555;
+  background-color: #061E26;
+  border: solid 1px #A53282;
   padding: 10px;
 }
 
 main div {
   width: 100%;
+}
+
+.out-message, .in-message {
+  padding: 5px 0;
+  margin: 5px;
+}
+
+.out-message {
+  text-align: right;
+}
+
+.out-message span {
+  color: #ffffff;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.in-message span {
+  color: #ffffff;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 5px;
 }
