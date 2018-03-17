@@ -1,4 +1,22 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: auto 30px;
+  background-color: #eeeeee;
+}
+
+main, footer {
+  margin: auto;
+  width: 300px;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+main {
+  background-color: #ffffff;
+  border: solid 1px #555555;
+  padding: 10px;
+}
+
+main div {
+  width: 100%;
 }

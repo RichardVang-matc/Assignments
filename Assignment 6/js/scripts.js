@@ -27,5 +27,32 @@ function addMessage(event) {
       type = 'error';
       className = 'error-message';
   }
+  if (messageInput.value != '') {
+    // Construct message and add to collection.
+    var message = new Message(type, user, messageInput.value);
+    message.push(message);
 
+    // Create elements.
+    var messageText = document.createTextNode(message.text);
+    var messageeSpanEl = document.createElement('span');
+    var messageDivEl = document.createElement('div');
+
+    messageSpanEl.appendChild(messageText);
+    messageDivEl.appendChild(messageSpanEl);
+    messageDivEl.className = className;
+
+    // DOM
+    messagesContainerEl.appendChild(messageDivEl);
+
+    // Reset input
+    messageInput.value = '';
+  }
 }
+
+var init = function() {
+  // Wire event handlers
+  document.getElementById('send-button').onclick = addMessage;
+  document.getElementById('reply-button').onclick = addMessage;
+}
+
+init();
