@@ -62,9 +62,13 @@ function completeTask (event) {
   for  (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id === id) {
       task[i].status = taskStatus.completed;
-      break; 
+      break;
     }
   }
+  //move task element from active list to completed list
+  taskEl.remove();
+  document.getElementById("completed-list").appendChild(taskEl);
+
 }
 
 function init () {
