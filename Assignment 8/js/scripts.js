@@ -47,5 +47,35 @@ var data = [
         $navItem = $('<li></li>')
 
         //Add post data
-    }
+        $title.text(data[i].title);
+        $body.text(data[i].body);
+        $author.text(data[i].author);
+
+        // Add nav item data
+        $navItem.attr('id', data[i].id);
+        $navItem.text(data[i].title);
+
+        // Combine post elements
+        $post.attr('id', postId);
+        $post.append($title);
+        $post.append($body);
+        $post.append($author);
+
+        // Add post and nav elements to page
+        $posts.append($post);
+        $nav.append($navItem);
+
+        // Wire up nav item click event
+        $navItem.on('click', function() {
+          var id = $(this).attr('id');
+          $posts.children().hide();
+          $posts.find('#post-' + id).fadeIn();
+        });
+
+        // Hide all posts and show the intro
+        $posts.children('.post').hide();
+        $intro.fadeIn(1000);
   }
+}
+
+initPosts();
